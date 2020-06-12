@@ -1,0 +1,141 @@
+body{ 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+ } 
+header{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(14, 165, 72);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 80px; */
+}
+header section{
+    display: flex;   
+    flex-direction: row;
+    align-items: center;
+}
+header ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+header ul li{
+    text-decoration: none;
+ 
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 20px;
+}
+header ul li a{
+    text-decoration: none;
+}
+#logoTitre img{
+    width: 120px;
+    position: relative;
+    top: 40px;
+    margin-left: 20px;
+}
+#nomVillage{
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+    text-align: center;
+    font-size: 80px;
+    /* background-color: blue; */
+}
+main{
+    margin-bottom: 40px;
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(14, 165, 72);
+}
+
+/* partie accueil */
+#partieAccueil{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+#cadreMeteo{
+    width: 18%;
+    height: auto;
+    border: solid red;
+    text-align: center;
+}
+#cadreBienvenue{
+    width: 60%;
+    height: auto;
+    border: solid springgreen;
+    text-align: center;
+}
+#cadreNouvelles{
+    width: 18%;
+    height: auto;
+    border: solid steelblue;
+    text-align: center;
+}
+
+/* partie Histoire */
+#cadreHistoire{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+#cadreHistoire p, #cadreHistoire h1{
+    text-align: center;
+    width: 60%;
+}
+#cadreHistoire h1{
+    font-size: 40px;   
+}
+#cadreHistoire p{
+    font-size: 20px;
+}
+
+
+#boucleEvent{
+    border: solid purple;
+    text-align: center;
+}
+#boucleActu{
+    border: solid purple;
+    text-align: center;
+}
+
+/* partie Administrative */
+
+#pageAdmin{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#pageAdminEvent{
+    width: 40%;
+}
+#pageAdminActu{
+    color:red;
+    width: 40%;
+}
+.ajoutAdmin{
+    /* border: solid red; */
+    display: inline-flex;
+    flex-direction: row;
+}

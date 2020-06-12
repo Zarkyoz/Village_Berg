@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        {# <link rel="stylesheet" href="style.css"> #}
+        {% endblock %}
+    </head>
+    <body>
+    {{ include('includes/header.html.twig') }}
+   
+    <main>
+        <h1 id="nomVillage">Berg</h1> 
+        {% block body %}
+        {% endblock %}
+    </main>
+
+    {{ include('includes/footer.html.twig') }}
+        {% block javascripts %}
+        <script src="{{ asset('assets/js/app.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

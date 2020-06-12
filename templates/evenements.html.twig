@@ -1,0 +1,17 @@
+{% extends 'base.html.twig'%}
+{% block title %}Evénements de Berg{% endblock %}
+{% block body %}
+    <section id="partieEvenement">
+        <h1>Evénement</h1>
+    {% for articleEvent in articleEvents %}        
+        <article id="boucleEvent" >
+        <h2> {{ articleEvent.titleEvent }} </h2>
+        {{articleEvent.createdAdEvent | date('d-m-Y H:m:s') }}
+        <p> {{ articleEvent.descriptionEvent}} </p>
+        <a href="{{ path('event_Show', {'id': articleEvent.id}) }}"><button>Lire la suite</button></a>
+        </article>
+    {% endfor %}
+    </section>
+
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{% block title %} Administrateur Mode {% endblock %}
+
+{% block body %}
+    <h1>Partie administration</h1>
+    <section id="pageAdmin">
+
+    {# Partie tableau Evenement #}
+    
+        <article id="pageAdminEvent">
+        <section class="ajoutAdmin">
+        <h2>Evénements</h2>
+        <a href="{{ path ('admin_village_createEvent') }}"><button>Add+</button></a>
+        </section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>TITLE</th>
+                        <th>DATE</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for adminEvent in adminEvents %}
+                        <tr>
+                            <th> {{ adminEvent.id }}</th>
+                            <th> {{ adminEvent.titleEvent }}</th>
+                            <th> {{ adminEvent.createdAdEvent | date("m/d/Y") }} </th>
+                            <th> <a href=""><button>Edition</button></a><a href=""><button>Supprimer</button></a> </th>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </article>
+
+        {# Partie tableau Actualité  #}
+
+        <article id="pageAdminActu">
+          <section class="ajoutAdmin">
+        <h2>Actualités</h2>
+        {# <a href="{{ path ('admin_village_createActu') }}"><button>Add+</button></a> #}
+        </section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>TITLE</th>
+                        <th>DATE</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for adminActu in adminActus %}
+                        <tr>
+                            <th>{{ adminActu.id }}</th>
+                            <th>{{ adminActu.titleActu }}</th>
+                            <th>{{ adminActu.createdAdActu | date('d/m/Y') }}</th>
+                            <th>  <a href=""><button>Edition</button></a><a href=""><button>Supprimer</button></a> </th>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        
+        </article>
+    </section>
+
+{% endblock %}

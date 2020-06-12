@@ -1,0 +1,15 @@
+{% extends 'base.html.twig'%}
+{% block title %}Actualités de Berg{% endblock %}
+{% block body %}
+<h1>Actualités</h1>
+    {% for articleActu in articleActus %}
+           <article id="boucleActu" >
+        <h2> {{ articleActu.titleActu }} </h2>
+        {{articleActu.createdAdActu | date('d-m-Y H:m:s') }}
+        <p> {{ articleActu.descriptionActu}} </p>
+        <a href="{{ path('actu_Show', {'id': articleActu.id}) }} "><button>Lire la suite</button></a>
+        </article>
+    {% endfor %}
+
+
+{% endblock %}

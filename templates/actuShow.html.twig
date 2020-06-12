@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+           <article>
+        <h2> {{ articleActu.titleActu }} </h2>
+        {{articleActu.createdAdActu | date('d-m-Y H:m:s') }}
+        <p> {{ articleActu.descriptionActu}} </p>
+        <a href="/actualites"><button>retour</button></a>
+        </article>
+{% endblock %}

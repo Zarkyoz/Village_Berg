@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+     <article>
+        <h2> {{ articleEvent.titleEvent }} </h2>
+        {{articleEvent.createdAdEvent | date('d-m-Y H:m:s') }}
+        <p> {{ articleEvent.descriptionEvent}} </p>
+        <a href="/evenements"><button>retour</button></a>
+        </article>
+{% endblock %}
+
