@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Create Actuality{% endblock %}
+{% block body %}
+
+        <article>
+                <section>
+                        {{ form_start(formActu) }}
+                                 {% include "admin/_formActu.html.twig" %}
+                                        <a href=""><button>Enregistrer</button></a>
+                        {{ form_end(formActu) }}
+                </section>
+                <a href="{{ path('admin_village_index') }}"><button>Retour Administration</button></a>
+        </article>
+
+
+{% endblock %}

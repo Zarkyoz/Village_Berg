@@ -15,7 +15,7 @@ class EventFixtures extends Fixture
             $articleEvent->setTitleEvent ("le titre de l'événement $ae");
             $articleEvent->setDescriptionEvent ("une descritpion de l'événement $ae");
             $articleEvent->setImageEvent ("http://placehold.it/350x150");
-            $articleEvent->setcreatedAdEvent (new \DateTime());
+            $articleEvent->setCreatedAdEvent (new \DateTime());
          
             $manager->persist($articleEvent);
         }

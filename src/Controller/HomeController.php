@@ -18,9 +18,8 @@ class HomeController extends AbstractController
 
     public function home()
     {
-        return $this->render('index.html.twig', [
-            "var" => "je suis ici"
-        ]);
+        
+        return $this->render('index.html.twig');
     }
 
     /**
@@ -95,5 +94,24 @@ class HomeController extends AbstractController
         return $this->render('contact.html.twig');
     }
 
+    // public function recentEvent($max = 3 )
+    // {
+    //     $articleEvents = ['...', '...', '...'];
+
+    //     return $this->render('_recent.html.twig', [
+    //         'articleEvents' => $articleEvents
+    //     ]);
+    // }
+
+
+
+
+    // /**
+    //  * @Route("/redirection", name="redi")
+    //  */
+    // public function redi()
+    // {
+    //     return $this->redirectToRoute('contact');
+    // }
 
 }

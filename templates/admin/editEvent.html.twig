@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Edition d'événement{% endblock %}
+
+{% block body %}
+     <article>
+        <section>
+            {{ form_start(formEvent) }}
+
+                {% include "admin/_formEvent.html.twig" %}
+                    <a href=""><button>Modifier</button></a>
+            
+            {{ form_end(formEvent) }}
+        </section>
+            <a href="{{ path('admin_village_index') }}"><button>Retour Administration</button></a>
+    </article>
+{% endblock %}

@@ -33,7 +33,7 @@ class ArticleEvent
     private $imageEvent;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $createdAdEvent;
 

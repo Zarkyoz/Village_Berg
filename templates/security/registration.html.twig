@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Création de votre compte{% endblock %}
+
+{% block body %}
+    <h1>Inscritpion au site</h1>
+
+    {{ form_start(formRegistre) }}
+        {{ form_row(formRegistre.username, {'label': 'Nom d\'utilisateur : ', attr:{'placeholder': 'Nom d\'utilisiateur !' }})}}
+        {{ form_row(formRegistre.email, {'label': 'Adesse Email : ', attr:{'placeholder': 'Adresse Email ...' }})}}
+        {{ form_row(formRegistre.password, {'label': 'Mot de passe : ', attr:{'placeholder': 'Mot de passe !' }})}}
+        {{ form_row(formRegistre.confirm_password, {'label': 'Confirmation du mot de passe : ', attr:{'placeholder': 'Répétez votre mot de passe !' }})}}
+        {# {{ form_errors(formRegistre.username) }}
+        {{ form_errors(formRegistre.email) }}
+        {{ form_errors(formRegistre.password) }}
+        {{ form_errors(formRegistre.confirm_password) }} #}
+
+
+
+        <a href=""><button>Inscription</button></a>
+    {{ form_end(formRegistre) }}
+
+<p>Vous faites déjà parti de nos plus fidèles adeptes ! <a href="{{path ('app_login')}} ">Connectez-vous !</a></p>
+
+{% endblock %}

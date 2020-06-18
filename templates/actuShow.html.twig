@@ -3,8 +3,8 @@
 {% block body %}
            <article>
         <h2> {{ articleActu.titleActu }} </h2>
-        {{articleActu.createdAdActu | date('d-m-Y H:m:s') }}
+        {{articleActu.createdAdActu | date('d-m-Y H:i:s', "Europe/Paris") }}
         <p> {{ articleActu.descriptionActu}} </p>
-        <a href="/actualites"><button>retour</button></a>
+        <a href="{{ path('actualites') }}"><button>retour</button></a>
         </article>
 {% endblock %}

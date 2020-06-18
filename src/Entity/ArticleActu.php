@@ -37,6 +37,10 @@ class ArticleActu
      */
     private $createdAdActu;
 
+    public function __construct()
+    {
+        $this->createdAdActu = new \DateTime();
+    }
     public function getId(): ?int
     {
         return $this->id;

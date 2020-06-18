@@ -9,10 +9,22 @@
             <p>Aujourd'hui il fait un temps à rester chez sois</p>
         </article>
         <article id="cadreBienvenue">
-            <h1>Bienvenue</h1>    
+            <h1>Bienvenue</h1>
+            <div>
+    {# {{ render(url('evenements', {max : 3})) }} #}
+
+        <img src="https://media.istockphoto.com/photos/steam-train-picture-id153055320?k=6&m=153055320&s=612x612&w=0&h=1ZfEmHwe3_rEEguy2w20VzG0EM3V41BHEkSyVOYgcYU=" alt="">
+
+
+
+
+            </div>    
         </article>
         <article id="cadreNouvelles">
             <h1>Les nouvelles</h1>
+    {# {{ render(controller(
+            'App\\Controller\\HomeController::recentEvent', {max: 3}
+    ))}} #}
         </article>
     </section>
 {% endblock %}

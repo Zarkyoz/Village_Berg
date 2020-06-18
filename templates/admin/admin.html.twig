@@ -26,8 +26,8 @@
                         <tr>
                             <th> {{ adminEvent.id }}</th>
                             <th> {{ adminEvent.titleEvent }}</th>
-                            <th> {{ adminEvent.createdAdEvent | date("m/d/Y") }} </th>
-                            <th> <a href=""><button>Edition</button></a><a href=""><button>Supprimer</button></a> </th>
+                            <th> {{ adminEvent.createdAdEvent | date("d/m/Y H:i:s", "Europe/Paris") }} </th>
+                            <th> <a href="{{ path('admin_village_editEvent', {'id' : adminEvent.id}) }}"><button>Edition</button></a><a href="{{ path('admin_village_deleteEvent', {'id': adminEvent.id} )}} "><button>Supprimer</button></a> </th>
                         </tr>
                     {% endfor %}
                 </tbody>
@@ -39,7 +39,7 @@
         <article id="pageAdminActu">
           <section class="ajoutAdmin">
         <h2>Actualités</h2>
-        {# <a href="{{ path ('admin_village_createActu') }}"><button>Add+</button></a> #}
+        <a href="{{ path ('admin_village_createActu') }}"><button>Add+</button></a>
         </section>
             <table>
                 <thead>
@@ -55,8 +55,9 @@
                         <tr>
                             <th>{{ adminActu.id }}</th>
                             <th>{{ adminActu.titleActu }}</th>
-                            <th>{{ adminActu.createdAdActu | date('d/m/Y') }}</th>
-                            <th>  <a href=""><button>Edition</button></a><a href=""><button>Supprimer</button></a> </th>
+                            <th>{{ adminActu.createdAdActu | date('d/m/Y H:i:s', "Europe/Paris") }}</th>
+                            <th>  <a href="{{ path('admin_village_editActu', {'id' : adminActu.id }) }}"><button>Edition</button></a>
+                            <a href="{{ path('admin_village_deleteActu', {'id': adminActu.id })}} "><button>Supprimer</button></a> </th>
                         </tr>
                     {% endfor %}
                 </tbody>

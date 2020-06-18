@@ -1,0 +1,8 @@
+            <article class="formAjout">
+                {{ form_label(formEvent.titleEvent ) }}
+                {{ form_widget(formEvent.titleEvent) }}
+            </article>
+                {{ form_row(formEvent.descriptionEvent, {'label': 'Descritpion de l\'événement'}) }}
+                {{ form_row(formEvent.imageEvent, {'label': 'Image de l\'événement'}) }}
+                {{ form_row(formEvent.createdAdEvent, {'label': "Date de l'événement" }) }}
+           

@@ -6,14 +6,11 @@
     <article>
         <section>
             {{ form_start(formEvent) }}
-
-                {{ form_row(formEvent.titleEvent) }}
-                {{ form_row(formEvent.descriptionEvent) }}
-                {{ form_row(formEvent.imageEvent) }}
-            
+                {% include "admin/_formEvent.html.twig" %}
+                    <a href=""><button>Enregistré</button></a>
             {{ form_end(formEvent) }}
-        </section>
-        <a href=""><button>Enregistré</button></a>
+        </section>  
+        <a href="{{ path('admin_village_index') }}"><button>Retour Administration</button></a>
     </article>
 
 {% endblock %}
