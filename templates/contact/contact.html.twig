@@ -3,5 +3,9 @@
 {% block body %}
     <section id="partieFormulaireContact">
         <h1>Formulaire de contact</h1>
+        {{ form_start(formContact) }}
+        {{ form_rest(formContact)}}
+        <a href=""><button type="submit">Envoyer</button></a>
+        {{ form_end(formContact) }}
     </section>
 {% endblock %}
