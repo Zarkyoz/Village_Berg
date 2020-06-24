@@ -19,6 +19,26 @@ class ArticleActuRepository extends ServiceEntityRepository
         parent::__construct($registry, ArticleActu::class);
     }
 
+
+        
+
+        /**
+        * @return ArticleActu[] Returns an array of ArticleActu objects
+        */
+
+        public function findLastActu()
+            {
+                return $this->createQueryBuilder('a')
+                            ->orderBy( 'a.id', 'DESC')
+                            ->setMaxResults(5)
+                            ->getQuery()
+                            ->getResult();
+
+            }
+
+
+
+
     // /**
     //  * @return ArticleActu[] Returns an array of ArticleActu objects
     //  */

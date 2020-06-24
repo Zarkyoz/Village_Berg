@@ -7,7 +7,7 @@
         
             <section class="partieArticle">
                 
-                {% for articleEvent in articleEvents %}        
+                {% for articleEvent in pagination %}        
                     <article class="boucleArticle" >
                         <img src="{{ articleEvent.imageEvent}}" width="250" alt="">
                         <section>
@@ -19,7 +19,8 @@
                         <a href="{{ path('event_Show', {'id': articleEvent.id}) }}"><button>Lire la suite</button></a>
                         </section>
                     </article>
-                {% endfor %}    
+                {% endfor %} 
+                {{ knp_pagination_render(pagination) }}   
             </section>
 
 

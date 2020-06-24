@@ -3,7 +3,9 @@
 {% block body %}
            <article>
         <h2> {{ articleActu.titleActu }} </h2>
-        {{articleActu.createdAdActu | date('d-m-Y H:i:s', "Europe/Paris") }}
+        <p>{{articleActu.createdAdActu | date('d-m-Y H:i:s', "Europe/Paris") }}</p>
+        <img src="{{ articleActu.imageActu }}" width="250" alt="">
+        <br>
         <p> {{ articleActu.descriptionActu}} </p>
         <a href="{{ path('actualites') }}"><button>retour</button></a>
         </article>

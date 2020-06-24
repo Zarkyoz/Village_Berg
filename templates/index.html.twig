@@ -21,10 +21,39 @@
             </div>    
         </article>
         <article id="cadreNouvelles">
-            <h1>Les nouvelles</h1>
+            <section>
+                <h2>Nouvelles</h2>
+
+            <article>
+                    <h3>Evénements récents</h3>
+                <table>
+                    {% for event in events %}
+                        <tr>
+                            <td>{{ event.titleEvent }}</td>
+                            <td><a href="{{path ('event_Show', {'id': event.id})}} "><button>Suite</button></a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </article>
+                
+            <article>
+                    <h3>Actualités Récentes</h3>
+
+                <table>
+                    {% for actu in actus %}
+                        <tr>
+                            <td>{{ actu.titleActu }}</td>
+                            <td><a href="{{path ('actu_Show', {'id': actu.id})}} "><button>Suite</button></a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </article>
+</section>
+        </article>
+
+
     {# {{ render(controller(
             'App\\Controller\\HomeController::recentEvent', {max: 3}
     ))}} #}
-        </article>
     </section>
 {% endblock %}

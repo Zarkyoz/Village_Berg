@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\ArticleEvent;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method ArticleEvent|null find($id, $lockMode = null, $lockVersion = null)
@@ -18,6 +19,36 @@ class ArticleEventRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, ArticleEvent::class);
     }
+
+        /**
+        * @return QueryBuilder
+        */
+
+        public function findAllQuery(): QueryBuilder
+        {
+            return $this->createQueryBuilder('a')               
+                        ->orderBy('a.id', 'ASC');
+                        
+        }
+
+
+
+     /**
+     * @return ArticleEvent[] Returns an array of ArticleEvent objects
+     */
+    
+            public function findLastEvent()
+            {
+            return $this->createQueryBuilder('a')
+                        ->orderBy('a.id' , 'DESC')
+                        ->setMaxResults(5)
+                        ->getQuery()
+                        ->getResult();
+            }
+
+
+
+
 
     // /**
     //  * @return ArticleEvent[] Returns an array of ArticleEvent objects

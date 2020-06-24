@@ -4,10 +4,12 @@ namespace App\Controller;
 
 use App\Entity\ArticleActu;
 use App\Entity\ArticleEvent;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\ArticleEventRepository;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\ArticleEventRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
@@ -16,10 +18,18 @@ class HomeController extends AbstractController
      * @Route("/", name="home")
      */
 
-    public function home()
+    public function home(): Response
     {
-        
-        return $this->render('index.html.twig');
+        $reposActus = $this->getDoctrine()->getRepository(ArticleActu::class);
+        $articleActus = $reposActus->findLastActu();
+
+        $reposEvents = $this->getDoctrine()->getRepository(ArticleEvent::class);
+        $articleEvents = $reposEvents->findLastEvent();
+
+        return $this->render('index.html.twig',[
+            'actus' => $articleActus,
+            'events'=> $articleEvents
+        ]);
     }
 
     /**
@@ -33,13 +43,21 @@ class HomeController extends AbstractController
     /**
      * @Route("/evenements" , name="evenements")
      */
-    public function evenements(ArticleEventRepository $repoEvent)
+    public function evenements(ArticleEventRepository $repoEvent, PaginatorInterface $paginator, Request $request)
     {   
-        // $repoEvent = $this->getDoctrine()->getRepository(ArticleEvent::class);
-        $articleEvents = $repoEvent->findAll();
+        $repoEvent = $this->getDoctrine()->getRepository(ArticleEvent::class);
+        $articleEvents = $repoEvent->findAllQuery();
+
+        $pagination = $paginator->paginate(
+            $articleEvents, /* query NOT result */
+            $request->query->getInt('page', 1),
+            2
+        );
+
+    
 
         return $this->render('evenements.html.twig', [
-            "articleEvents" => $articleEvents
+            "pagination" => $pagination
         ]);
     }
 
